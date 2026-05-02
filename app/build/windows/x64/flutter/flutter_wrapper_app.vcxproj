@@ -18,7 +18,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4F788A3A-E883-3CF7-B1EB-B98EFD0A6DE2}</ProjectGuid>
+    <ProjectGuid>{22A79815-BDB9-3307-A6F8-978D955C8348}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -50,22 +50,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\flutter\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\flutter\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">flutter_wrapper_app.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">flutter_wrapper_app</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\flutter\Profile\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\flutter\Profile\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">flutter_wrapper_app.dir\Profile\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">flutter_wrapper_app</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\flutter\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\flutter\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">flutter_wrapper_app.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">flutter_wrapper_app</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -94,10 +94,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_HAS_EXCEPTIONS=0;UNICODE;_UNICODE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -110,7 +110,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -140,10 +140,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;UNICODE;_UNICODE;CMAKE_INTDIR=\"Profile\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -156,7 +156,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -186,10 +186,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;UNICODE;_UNICODE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\include;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -201,11 +201,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/maxfa/Documents/projects/msl_scrimtracker/windows/flutter/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/maxfa/Documents/projects/msl_scrimtracker/windows -BC:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64 --check-stamp-file C:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64/flutter/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows -BC:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64 --check-stamp-file C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/flutter/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -213,12 +213,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\flutter\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\flutter\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule C:/Users/maxfa/Documents/projects/msl_scrimtracker/windows/flutter/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/maxfa/Documents/projects/msl_scrimtracker/windows -BC:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64 --check-stamp-file C:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64/flutter/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows -BC:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64 --check-stamp-file C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/flutter/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -226,12 +226,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\flutter\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\flutter\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/maxfa/Documents/projects/msl_scrimtracker/windows/flutter/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/maxfa/Documents/projects/msl_scrimtracker/windows -BC:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64 --check-stamp-file C:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64/flutter/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows -BC:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64 --check-stamp-file C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/flutter/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -239,27 +239,27 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\flutter\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\flutter\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc" />
-    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc" />
-    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc" />
-    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc" />
+    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc" />
+    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc" />
+    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc" />
+    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\ZERO_CHECK.vcxproj">
-      <Project>{EDE084EC-DEED-327B-82C2-8771044166B0}</Project>
+    <ProjectReference Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\ZERO_CHECK.vcxproj">
+      <Project>{0AB864FF-28E2-3F04-8094-A6EE21703284}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\flutter\flutter_assemble.vcxproj">
-      <Project>{1462D11E-7A78-30B6-804B-5524D12E93D6}</Project>
+    <ProjectReference Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\flutter\flutter_assemble.vcxproj">
+      <Project>{D8E79597-DF69-3FCB-9ED4-4ABC5A7F0734}</Project>
       <Name>flutter_assemble</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

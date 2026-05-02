@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\CMakeFiles\efc9aa32859e72715332ab9b3fd7d4d3\flutter_windows.dll.rule">
+    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\CMakeFiles\476cd697b4a78b46482125aa797ef4f8\flutter_windows.dll.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\CMakeFiles\6923a750837533fe40206238b8c46313\flutter_assemble.rule">
+    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\CMakeFiles\a7600919cb46c2d8808df5dd9b81fd04\flutter_assemble.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\flutter\CMakeFiles\flutter_assemble" />
+    <None Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\flutter\CMakeFiles\flutter_assemble" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{0B759031-CC44-39C5-ACBC-461CB49AF9C8}</UniqueIdentifier>
+      <UniqueIdentifier>{5E8606F0-31EB-3754-811D-16DC47318547}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

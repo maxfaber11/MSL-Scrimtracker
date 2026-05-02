@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\CMakeFiles\69ba1a43bd4f446eb1a9e141c913d60a\INSTALL_force.rule">
+    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\CMakeFiles\88a62921b36e644ee776f923e4acef41\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{0B759031-CC44-39C5-ACBC-461CB49AF9C8}</UniqueIdentifier>
+      <UniqueIdentifier>{5E8606F0-31EB-3754-811D-16DC47318547}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc">
+    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc">
+    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc">
+    <ClCompile Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{0B759031-CC44-39C5-ACBC-461CB49AF9C8}</UniqueIdentifier>
+      <UniqueIdentifier>{5E8606F0-31EB-3754-811D-16DC47318547}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{86F721D2-37D7-342F-8585-802F1590251D}</UniqueIdentifier>
+      <UniqueIdentifier>{94A624C4-B7F9-3181-A3E0-F6A421A378BB}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

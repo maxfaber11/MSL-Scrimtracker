@@ -46,8 +46,13 @@ events:
         - "C:\\Program Files\\Git\\cmd"
         - "C:\\Users\\maxfa\\development\\flutter\\bin"
         - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
         - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -64,9 +69,9 @@ events:
       The output was:
       0
       MSBuild version 18.6.3+84d3e95b4 for .NET Framework
-      Build started 02.05.2026 01:11:56.
+      Build started 02.05.2026 03:32:28.
       
-      Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\build\\windows\\x64\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
         Creating directory "Debug\\".
         Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
@@ -79,7 +84,7 @@ events:
         CMakeCXXCompilerId.cpp
       Link:
         C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\build\\windows\\x64\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.exe
+        CompilerIdCXX.vcxproj -> C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
         :VCEnd
@@ -87,13 +92,13 @@ events:
       FinalizeBuildStatus:
         Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
         Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
-      Done Building Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\build\\windows\\x64\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      Done Building Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
       
       Build succeeded.
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.93
+      Time Elapsed 00:00:00.58
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -101,7 +106,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64/CMakeFiles/4.2.3-msvc3/CompilerIdCXX/CompilerIdCXX.exe
+        C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/4.2.3-msvc3/CompilerIdCXX/CompilerIdCXX.exe
       
   -
     kind: "find-v1"
@@ -137,8 +142,13 @@ events:
       - "C:/Program Files/Git/cmd/"
       - "C:/Users/maxfa/development/flutter/bin/"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/link.com"
     found: "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/link.exe"
@@ -155,8 +165,13 @@ events:
         - "C:\\Program Files\\Git\\cmd"
         - "C:\\Users\\maxfa\\development\\flutter\\bin"
         - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
         - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -191,8 +206,13 @@ events:
       - "C:/Program Files/Git/cmd/"
       - "C:/Users/maxfa/development/flutter/bin/"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lld-link.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lld-link.exe"
@@ -230,12 +250,27 @@ events:
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/lld-link.com"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/lld-link.exe"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/lld-link.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/lld-link.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/lld-link"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/lld-link.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/lld-link.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/lld-link"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/lld-link.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/lld-link.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/lld-link"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/lld-link.com"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/lld-link"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/lld-link"
     found: false
     search_context:
       ENV{PATH}:
@@ -250,8 +285,13 @@ events:
         - "C:\\Program Files\\Git\\cmd"
         - "C:\\Users\\maxfa\\development\\flutter\\bin"
         - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
         - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -284,8 +324,13 @@ events:
       - "C:/Program Files/Git/cmd/"
       - "C:/Users/maxfa/development/flutter/bin/"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/link.com"
     found: "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/link.exe"
@@ -302,8 +347,13 @@ events:
         - "C:\\Program Files\\Git\\cmd"
         - "C:\\Users\\maxfa\\development\\flutter\\bin"
         - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
         - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -336,8 +386,13 @@ events:
       - "C:/Program Files/Git/cmd/"
       - "C:/Users/maxfa/development/flutter/bin/"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/mt.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/mt.exe"
@@ -375,12 +430,27 @@ events:
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/mt.com"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/mt.exe"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/mt"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/mt.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/mt.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/mt"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/mt.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/mt.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/mt"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/mt.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/mt.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/mt"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/mt.com"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/mt.exe"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/mt"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/mt.com"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/mt.exe"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/mt"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/mt.com"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/mt.exe"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/mt"
     found: false
     search_context:
       ENV{PATH}:
@@ -395,8 +465,13 @@ events:
         - "C:\\Program Files\\Git\\cmd"
         - "C:\\Users\\maxfa\\development\\flutter\\bin"
         - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
         - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -429,8 +504,13 @@ events:
       - "C:/Program Files/Git/cmd/"
       - "C:/Users/maxfa/development/flutter/bin/"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lib.com"
     found: "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lib.exe"
@@ -447,8 +527,13 @@ events:
         - "C:\\Program Files\\Git\\cmd"
         - "C:\\Users\\maxfa\\development\\flutter\\bin"
         - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
         - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -483,8 +568,13 @@ events:
       - "C:/Program Files/Git/cmd/"
       - "C:/Users/maxfa/development/flutter/bin/"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -531,12 +621,27 @@ events:
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/rc.com"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/rc.exe"
       - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/rc"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/rc.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/rc.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/rc"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/rc.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/rc.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/rc"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/rc.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/rc.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/rc"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/rc.com"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/rc.exe"
       - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/rc"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/rc.com"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/rc.exe"
       - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/rc"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/rc.com"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/rc.exe"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/rc"
       - "C:/Program Files/bin/rc.com"
       - "C:/Program Files/bin/rc.exe"
       - "C:/Program Files/bin/rc"
@@ -587,8 +692,13 @@ events:
         - "C:\\Program Files\\Git\\cmd"
         - "C:\\Users\\maxfa\\development\\flutter\\bin"
         - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
         - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/msl_scrimtracker"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -604,8 +714,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-6mtz7n"
-      binary: "C:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-6mtz7n"
+      source: "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-eidzt6"
+      binary: "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-eidzt6"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -615,39 +725,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-6mtz7n'
+        Change Dir: 'C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-eidzt6'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Insiders/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_07d65.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Insiders/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_74f43.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.6.3+84d3e95b4 for .NET Framework
-        Build started 02.05.2026 01:11:58.
+        Build started 02.05.2026 03:32:29.
         
-        Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-6mtz7n\\cmTC_07d65.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-eidzt6\\cmTC_74f43.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-6mtz7n\\Debug\\".
-          Creating directory "cmTC_07d65.dir\\Debug\\cmTC_07d65.tlog\\".
+          Creating directory "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-eidzt6\\Debug\\".
+          Creating directory "cmTC_74f43.dir\\Debug\\cmTC_74f43.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_07d65.dir\\Debug\\cmTC_07d65.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_07d65.dir\\Debug\\cmTC_07d65.tlog\\unsuccessfulbuild".
+          Creating "cmTC_74f43.dir\\Debug\\cmTC_74f43.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_74f43.dir\\Debug\\cmTC_74f43.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_07d65.dir\\Debug\\\\" /Fd"cmTC_07d65.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_74f43.dir\\Debug\\\\" /Fd"cmTC_74f43.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36241 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_07d65.dir\\Debug\\\\" /Fd"cmTC_07d65.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_74f43.dir\\Debug\\\\" /Fd"cmTC_74f43.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-6mtz7n\\Debug\\cmTC_07d65.exe" /INCREMENTAL /ILK:"cmTC_07d65.dir\\Debug\\cmTC_07d65.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-6mtz7n/Debug/cmTC_07d65.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-6mtz7n/Debug/cmTC_07d65.lib" /MACHINE:X64  /machine:x64 cmTC_07d65.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_07d65.vcxproj -> C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-6mtz7n\\Debug\\cmTC_07d65.exe
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-eidzt6\\Debug\\cmTC_74f43.exe" /INCREMENTAL /ILK:"cmTC_74f43.dir\\Debug\\cmTC_74f43.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-eidzt6/Debug/cmTC_74f43.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-eidzt6/Debug/cmTC_74f43.lib" /MACHINE:X64  /machine:x64 cmTC_74f43.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_74f43.vcxproj -> C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-eidzt6\\Debug\\cmTC_74f43.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_07d65.dir\\Debug\\cmTC_07d65.tlog\\unsuccessfulbuild".
-          Touching "cmTC_07d65.dir\\Debug\\cmTC_07d65.tlog\\cmTC_07d65.lastbuildstate".
-        Done Building Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-6mtz7n\\cmTC_07d65.vcxproj" (default targets).
+          Deleting file "cmTC_74f43.dir\\Debug\\cmTC_74f43.tlog\\unsuccessfulbuild".
+          Touching "cmTC_74f43.dir\\Debug\\cmTC_74f43.tlog\\cmTC_74f43.lastbuildstate".
+        Done Building Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-eidzt6\\cmTC_74f43.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.51
+        Time Elapsed 00:00:00.38
         
       exitCode: 0
   -
@@ -678,4 +788,730 @@ events:
       Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/HostX64/x64/link.exe" "-v"
       Microsoft (R) Incremental Linker Version 14.51.36241.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/"
+    found: "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\maxfa\\fvm\\versions\\stable\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\maxfa\\development\\flutter\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/msl_scrimtracker"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake"
+        - "C:/Program Files/msl_scrimtracker"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 18.6.3+84d3e95b4 for .NET Framework
+      Build started 02.05.2026 03:32:30.
+      
+      Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc145.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.39
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/4.2.3-msvc3/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/"
+      - "C:/Users/maxfa/fvm/versions/stable/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Users/maxfa/development/flutter/bin/"
+      - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/sbin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/"
+      - "C:/Program Files/msl_scrimtracker/bin/"
+      - "C:/Program Files/msl_scrimtracker/sbin/"
+      - "C:/Program Files/msl_scrimtracker/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lld-link"
+      - "C:/Users/maxfa/fvm/versions/stable/bin/lld-link.com"
+      - "C:/Users/maxfa/fvm/versions/stable/bin/lld-link.exe"
+      - "C:/Users/maxfa/fvm/versions/stable/bin/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Users/maxfa/development/flutter/bin/lld-link.com"
+      - "C:/Users/maxfa/development/flutter/bin/lld-link.exe"
+      - "C:/Users/maxfa/development/flutter/bin/lld-link"
+      - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/lld-link.com"
+      - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/lld-link.exe"
+      - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/lld-link.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/lld-link.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/lld-link"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/lld-link.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/lld-link.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/lld-link"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/lld-link.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/lld-link.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/lld-link"
+      - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/lld-link"
+      - "C:/Program Files/bin/lld-link.com"
+      - "C:/Program Files/bin/lld-link.exe"
+      - "C:/Program Files/bin/lld-link"
+      - "C:/Program Files/sbin/lld-link.com"
+      - "C:/Program Files/sbin/lld-link.exe"
+      - "C:/Program Files/sbin/lld-link"
+      - "C:/Program Files/lld-link.com"
+      - "C:/Program Files/lld-link.exe"
+      - "C:/Program Files/lld-link"
+      - "C:/Program Files (x86)/bin/lld-link.com"
+      - "C:/Program Files (x86)/bin/lld-link.exe"
+      - "C:/Program Files (x86)/bin/lld-link"
+      - "C:/Program Files (x86)/sbin/lld-link.com"
+      - "C:/Program Files (x86)/sbin/lld-link.exe"
+      - "C:/Program Files (x86)/sbin/lld-link"
+      - "C:/Program Files (x86)/lld-link.com"
+      - "C:/Program Files (x86)/lld-link.exe"
+      - "C:/Program Files (x86)/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/sbin/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/sbin/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/sbin/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/lld-link"
+      - "C:/Program Files/msl_scrimtracker/bin/lld-link.com"
+      - "C:/Program Files/msl_scrimtracker/bin/lld-link.exe"
+      - "C:/Program Files/msl_scrimtracker/bin/lld-link"
+      - "C:/Program Files/msl_scrimtracker/sbin/lld-link.com"
+      - "C:/Program Files/msl_scrimtracker/sbin/lld-link.exe"
+      - "C:/Program Files/msl_scrimtracker/sbin/lld-link"
+      - "C:/Program Files/msl_scrimtracker/lld-link.com"
+      - "C:/Program Files/msl_scrimtracker/lld-link.exe"
+      - "C:/Program Files/msl_scrimtracker/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\maxfa\\fvm\\versions\\stable\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\maxfa\\development\\flutter\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/msl_scrimtracker"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake"
+        - "C:/Program Files/msl_scrimtracker"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-29qb3u"
+      binary: "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-29qb3u"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-29qb3u'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Insiders/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2bf37.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.6.3+84d3e95b4 for .NET Framework
+        Build started 02.05.2026 03:32:31.
+        
+        Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-29qb3u\\cmTC_2bf37.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-29qb3u\\Debug\\".
+          Creating directory "cmTC_2bf37.dir\\Debug\\cmTC_2bf37.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_2bf37.dir\\Debug\\cmTC_2bf37.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_2bf37.dir\\Debug\\cmTC_2bf37.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_2bf37.dir\\Debug\\\\" /Fd"cmTC_2bf37.dir\\Debug\\vc145.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36241 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_2bf37.dir\\Debug\\\\" /Fd"cmTC_2bf37.dir\\Debug\\vc145.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-29qb3u\\Debug\\cmTC_2bf37.exe" /INCREMENTAL /ILK:"cmTC_2bf37.dir\\Debug\\cmTC_2bf37.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-29qb3u/Debug/cmTC_2bf37.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/CMakeFiles/CMakeScratch/TryCompile-29qb3u/Debug/cmTC_2bf37.lib" /MACHINE:X64  /machine:x64 cmTC_2bf37.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_2bf37.vcxproj -> C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-29qb3u\\Debug\\cmTC_2bf37.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_2bf37.dir\\Debug\\cmTC_2bf37.tlog\\unsuccessfulbuild".
+          Touching "cmTC_2bf37.dir\\Debug\\cmTC_2bf37.tlog\\cmTC_2bf37.lastbuildstate".
+        Done Building Project "C:\\Users\\maxfa\\Documents\\projects\\msl_scrimtracker\\app\\build\\windows\\x64\\CMakeFiles\\CMakeScratch\\TryCompile-29qb3u\\cmTC_2bf37.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.37
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.51.36241.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/FindJNI.cmake:538 (find_library)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:20 (find_package)"
+    mode: "library"
+    variable: "JAVA_JVM_LIBRARY"
+    description: "Java Virtual Machine library"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "jvm"
+    candidate_directories:
+      - "C:/Users/maxfa/fvm/versions/stable/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Users/maxfa/development/flutter/bin/"
+      - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Program Files/lib/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/lib/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/lib/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/"
+      - "C:/Program Files/msl_scrimtracker/lib/"
+      - "C:/Program Files/msl_scrimtracker/"
+      - "C:/Program Files/msl_scrimtracker/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "/bin/"
+    searched_directories:
+      - "C:/Users/maxfa/fvm/versions/stable/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Users/maxfa/development/flutter/bin/"
+      - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Program Files/lib/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/lib/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/lib/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/"
+      - "C:/Program Files/msl_scrimtracker/lib/"
+      - "C:/Program Files/msl_scrimtracker/"
+      - "C:/Program Files/msl_scrimtracker/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "/bin/"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\maxfa\\fvm\\versions\\stable\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\maxfa\\development\\flutter\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/msl_scrimtracker"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake"
+        - "C:/Program Files/msl_scrimtracker"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "C:/Program Files/msl_scrimtracker/bin"
+        - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin"
+        - "/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/FindJNI.cmake:566 (find_path)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:20 (find_package)"
+    mode: "path"
+    variable: "JAVA_INCLUDE_PATH"
+    description: "JNI include directory"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "jni.h"
+    candidate_directories:
+      - "C:/Users/maxfa/fvm/versions/stable/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Users/maxfa/development/flutter/bin/"
+      - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Program Files/include/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/include/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/include/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/"
+      - "C:/Program Files/msl_scrimtracker/include/"
+      - "C:/Program Files/msl_scrimtracker/"
+    searched_directories:
+      - "C:/Users/maxfa/fvm/versions/stable/bin/jni.h"
+      - "C:/Windows/System32/jni.h"
+      - "C:/Windows/jni.h"
+      - "C:/Windows/System32/wbem/jni.h"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/jni.h"
+      - "C:/Windows/System32/OpenSSH/jni.h"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/jni.h"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/jni.h"
+      - "C:/Program Files/Git/cmd/jni.h"
+      - "C:/Users/maxfa/development/flutter/bin/jni.h"
+      - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/jni.h"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/jni.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/jni.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/jni.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/jni.h"
+      - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/jni.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/jni.h"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/jni.h"
+      - "C:/Program Files/include/jni.h"
+      - "C:/Program Files/jni.h"
+      - "C:/Program Files (x86)/include/jni.h"
+      - "C:/Program Files (x86)/jni.h"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/include/jni.h"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/jni.h"
+      - "C:/Program Files/msl_scrimtracker/include/jni.h"
+      - "C:/Program Files/msl_scrimtracker/jni.h"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\maxfa\\fvm\\versions\\stable\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\maxfa\\development\\flutter\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/msl_scrimtracker"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake"
+        - "C:/Program Files/msl_scrimtracker"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.2/Modules/FindJNI.cmake:606 (find_path)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:20 (find_package)"
+    mode: "path"
+    variable: "JAVA_INCLUDE_PATH2"
+    description: "jni_md.h jniport.h include directory"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "jni_md.h"
+      - "jniport.h"
+    candidate_directories:
+      - "C:/Users/maxfa/fvm/versions/stable/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Users/maxfa/development/flutter/bin/"
+      - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Program Files/include/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/include/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/include/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/"
+      - "C:/Program Files/msl_scrimtracker/include/"
+      - "C:/Program Files/msl_scrimtracker/"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/darwin/"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/win32/"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/linux/"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/freebsd/"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/openbsd/"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/solaris/"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/hp-ux/"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/alpha/"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/aix/"
+    searched_directories:
+      - "C:/Users/maxfa/fvm/versions/stable/bin/jni_md.h"
+      - "C:/Windows/System32/jni_md.h"
+      - "C:/Windows/jni_md.h"
+      - "C:/Windows/System32/wbem/jni_md.h"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/jni_md.h"
+      - "C:/Windows/System32/OpenSSH/jni_md.h"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/jni_md.h"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/jni_md.h"
+      - "C:/Program Files/Git/cmd/jni_md.h"
+      - "C:/Users/maxfa/development/flutter/bin/jni_md.h"
+      - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/jni_md.h"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/jni_md.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/jni_md.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/jni_md.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/jni_md.h"
+      - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/jni_md.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/jni_md.h"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/jni_md.h"
+      - "C:/Program Files/include/jni_md.h"
+      - "C:/Program Files/jni_md.h"
+      - "C:/Program Files (x86)/include/jni_md.h"
+      - "C:/Program Files (x86)/jni_md.h"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/include/jni_md.h"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/jni_md.h"
+      - "C:/Program Files/msl_scrimtracker/include/jni_md.h"
+      - "C:/Program Files/msl_scrimtracker/jni_md.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/jni_md.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/darwin/jni_md.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/win32/jni_md.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/linux/jni_md.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/freebsd/jni_md.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/openbsd/jni_md.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/solaris/jni_md.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/hp-ux/jni_md.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/alpha/jni_md.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/aix/jni_md.h"
+      - "C:/Users/maxfa/fvm/versions/stable/bin/jniport.h"
+      - "C:/Windows/System32/jniport.h"
+      - "C:/Windows/jniport.h"
+      - "C:/Windows/System32/wbem/jniport.h"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/jniport.h"
+      - "C:/Windows/System32/OpenSSH/jniport.h"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/jniport.h"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/jniport.h"
+      - "C:/Program Files/Git/cmd/jniport.h"
+      - "C:/Users/maxfa/development/flutter/bin/jniport.h"
+      - "C:/Users/maxfa/AppData/Local/Pub/Cache/bin/jniport.h"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/jniport.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/Scripts/jniport.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Python314/jniport.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Python/Launcher/jniport.h"
+      - "C:/Users/maxfa/AppData/Local/Microsoft/WindowsApps/jniport.h"
+      - "C:/Users/maxfa/AppData/Local/Programs/Microsoft VS Code/bin/jniport.h"
+      - "C:/Users/maxfa/AppData/Local/GitHubDesktop/bin/jniport.h"
+      - "C:/Program Files/include/jniport.h"
+      - "C:/Program Files/jniport.h"
+      - "C:/Program Files (x86)/include/jniport.h"
+      - "C:/Program Files (x86)/jniport.h"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/include/jniport.h"
+      - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/jniport.h"
+      - "C:/Program Files/msl_scrimtracker/include/jniport.h"
+      - "C:/Program Files/msl_scrimtracker/jniport.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/jniport.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/darwin/jniport.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/win32/jniport.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/linux/jniport.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/freebsd/jniport.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/openbsd/jniport.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/solaris/jniport.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/hp-ux/jniport.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/alpha/jniport.h"
+      - "C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/aix/jniport.h"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\maxfa\\fvm\\versions\\stable\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\maxfa\\development\\flutter\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Pub\\Cache\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\maxfa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\maxfa\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/msl_scrimtracker"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/Microsoft Visual Studio/18/Insiders/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake"
+        - "C:/Program Files/msl_scrimtracker"
 ...

@@ -1,6 +1,6 @@
-^C:\USERS\MAXFA\DOCUMENTS\PROJECTS\MSL_SCRIMTRACKER\BUILD\WINDOWS\X64\CMAKEFILES\EFC9AA32859E72715332AB9B3FD7D4D3\FLUTTER_WINDOWS.DLL.RULE
+^C:\USERS\MAXFA\DOCUMENTS\PROJECTS\MSL_SCRIMTRACKER\APP\BUILD\WINDOWS\X64\CMAKEFILES\476CD697B4A78B46482125AA797EF4F8\FLUTTER_WINDOWS.DLL.RULE
 setlocal
-"C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\Users\maxfa\fvm\versions\stable PROJECT_DIR=C:\Users\maxfa\Documents\projects\msl_scrimtracker FLUTTER_ROOT=C:\Users\maxfa\fvm\versions\stable FLUTTER_EPHEMERAL_DIR=C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\ephemeral PROJECT_DIR=C:\Users\maxfa\Documents\projects\msl_scrimtracker FLUTTER_TARGET=C:\Users\maxfa\Documents\projects\msl_scrimtracker\lib\main.dart DART_DEFINES=RkxVVFRFUl9WRVJTSU9OPTMuNDEuOQ==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049MDBiMGM5MWYwNg==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049NDJkM2Q3NWE1Ng==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMS41 DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\maxfa\Documents\projects\msl_scrimtracker\.dart_tool\package_config.json C:/Users/maxfa/fvm/versions/stable/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+"C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\Users\maxfa\fvm\versions\stable PROJECT_DIR=C:\Users\maxfa\Documents\projects\msl_scrimtracker\app FLUTTER_ROOT=C:\Users\maxfa\fvm\versions\stable FLUTTER_EPHEMERAL_DIR=C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\ephemeral PROJECT_DIR=C:\Users\maxfa\Documents\projects\msl_scrimtracker\app FLUTTER_TARGET=C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\lib\main.dart DART_DEFINES=RkxVVFRFUl9WRVJTSU9OPTMuNDEuOQ==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049MDBiMGM5MWYwNg==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049NDJkM2Q3NWE1Ng==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMS41 DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\.dart_tool\package_config.json C:/Users/maxfa/fvm/versions/stable/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -8,7 +8,7 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\MAXFA\DOCUMENTS\PROJECTS\MSL_SCRIMTRACKER\BUILD\WINDOWS\X64\CMAKEFILES\6923A750837533FE40206238B8C46313\FLUTTER_ASSEMBLE.RULE
+^C:\USERS\MAXFA\DOCUMENTS\PROJECTS\MSL_SCRIMTRACKER\APP\BUILD\WINDOWS\X64\CMAKEFILES\A7600919CB46C2D8808DF5DD9B81FD04\FLUTTER_ASSEMBLE.RULE
 setlocal
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -16,9 +16,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\MAXFA\DOCUMENTS\PROJECTS\MSL_SCRIMTRACKER\WINDOWS\FLUTTER\CMAKELISTS.TXT
+^C:\USERS\MAXFA\DOCUMENTS\PROJECTS\MSL_SCRIMTRACKER\APP\WINDOWS\FLUTTER\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/maxfa/Documents/projects/msl_scrimtracker/windows -BC:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64 --check-stamp-file C:/Users/maxfa/Documents/projects/msl_scrimtracker/build/windows/x64/flutter/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/maxfa/Documents/projects/msl_scrimtracker/app/windows -BC:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64 --check-stamp-file C:/Users/maxfa/Documents/projects/msl_scrimtracker/app/build/windows/x64/flutter/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

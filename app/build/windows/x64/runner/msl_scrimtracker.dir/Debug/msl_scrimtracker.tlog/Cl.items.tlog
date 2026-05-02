@@ -1,5 +1,5 @@
-C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\runner\flutter_window.cpp;C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\runner\msl_scrimtracker.dir\Debug\flutter_window.obj
-C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\runner\main.cpp;C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\runner\msl_scrimtracker.dir\Debug\main.obj
-C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\runner\utils.cpp;C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\runner\msl_scrimtracker.dir\Debug\utils.obj
-C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\runner\win32_window.cpp;C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\runner\msl_scrimtracker.dir\Debug\win32_window.obj
-C:\Users\maxfa\Documents\projects\msl_scrimtracker\windows\flutter\generated_plugin_registrant.cc;C:\Users\maxfa\Documents\projects\msl_scrimtracker\build\windows\x64\runner\msl_scrimtracker.dir\Debug\generated_plugin_registrant.obj
+C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\runner\flutter_window.cpp;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\runner\msl_scrimtracker.dir\Debug\flutter_window.obj
+C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\runner\main.cpp;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\runner\msl_scrimtracker.dir\Debug\main.obj
+C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\runner\utils.cpp;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\runner\msl_scrimtracker.dir\Debug\utils.obj
+C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\runner\win32_window.cpp;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\runner\msl_scrimtracker.dir\Debug\win32_window.obj
+C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\windows\flutter\generated_plugin_registrant.cc;C:\Users\maxfa\Documents\projects\msl_scrimtracker\app\build\windows\x64\runner\msl_scrimtracker.dir\Debug\generated_plugin_registrant.obj
