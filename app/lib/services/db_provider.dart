@@ -30,8 +30,9 @@ class DBProvider {
 
     return await openDatabase(
       path,
-      version: 1,
+      version: 2,
       onCreate: _createDB,
+      onUpgrade: _upgradeDB,
     );
   }
 
@@ -72,9 +73,19 @@ class DBProvider {
         roundsPlayedAttack INTEGER,
         defPistolWin INTEGER,
         atkPistolWin INTEGER,
-        teamId TEXT NOT NULL
+        teamId TEXT NOT NULL,
+        startingSide TEXT,
+        enemyTier TEXT
       );
     ''');
+  }
+
+  Future<void> _upgradeDB(Database db, int oldVersion, int newVersion) async {
+    if (oldVersion < 2) {
+      // Add missing columns to scrims table
+      await db.execute('ALTER TABLE scrims ADD COLUMN startingSide TEXT');
+      await db.execute('ALTER TABLE scrims ADD COLUMN enemyTier TEXT');
+    }
   }
 
   Future<void> close() async {

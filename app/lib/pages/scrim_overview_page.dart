@@ -5,6 +5,7 @@ import 'package:msl_scrimtracker/models/team.dart';
 import 'package:msl_scrimtracker/models/player.dart';
 import 'package:msl_scrimtracker/models/agent_enum.dart';
 import 'package:msl_scrimtracker/pages/stats_page.dart';
+import 'package:msl_scrimtracker/pages/scrim_detail_page.dart';
 import 'package:msl_scrimtracker/services/scrim_repository.dart';
 
 class ScrimOverviewPage extends StatefulWidget {
@@ -17,6 +18,7 @@ class ScrimOverviewPage extends StatefulWidget {
 class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
   final ScrimRepository _repo = ScrimRepository();
   List<Scrim> scrims = [];
+  final Set<String> _selectedScrimIds = <String>{};
 
   @override
   void initState() {
@@ -26,7 +28,73 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
 
   Future<void> _refresh() async {
     final list = await _repo.getAllScrims();
-    setState(() => scrims = list);
+    if (!mounted) return;
+    setState(() {
+      scrims = list;
+      _selectedScrimIds.removeWhere((id) => !list.any((scrim) => scrim.id == id));
+    });
+  }
+
+  void _toggleScrimSelection(String id) {
+    setState(() {
+      if (_selectedScrimIds.contains(id)) {
+        _selectedScrimIds.remove(id);
+      } else {
+        _selectedScrimIds.add(id);
+      }
+    });
+  }
+
+  void _clearSelection() {
+    if (_selectedScrimIds.isEmpty) return;
+    setState(() => _selectedScrimIds.clear());
+  }
+
+  void _selectAllScrims() {
+    if (scrims.isEmpty) return;
+    setState(() {
+      _selectedScrimIds
+        ..clear()
+        ..addAll(scrims.map((scrim) => scrim.id));
+    });
+  }
+
+  bool get _allScrimsSelected => scrims.isNotEmpty && _selectedScrimIds.length == scrims.length;
+
+  Future<void> _deleteSelectedScrims() async {
+    final selectedCount = _selectedScrimIds.length;
+    if (selectedCount == 0) return;
+
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: const Text('Delete scrim(s)?'),
+        content: Text('Delete $selectedCount selected scrim${selectedCount == 1 ? '' : 's'}? This cannot be undone.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            child: const Text('Delete'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed != true) return;
+
+    final idsToDelete = _selectedScrimIds.toList(growable: false);
+    for (final id in idsToDelete) {
+      await _repo.deleteScrim(id);
+    }
+
+    if (!mounted) return;
+    setState(() {
+      _selectedScrimIds.clear();
+    });
+    await _refresh();
   }
 
   void _showAgentSelector(BuildContext context, Function(Agent?) onSelect) {
@@ -492,10 +560,38 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
               child: const Text('Cancel', style: TextStyle(color: Colors.white)),
             ),
             ElevatedButton(
-              onPressed: () {
-                // TODO: Save scrim to database
-                Navigator.of(c).pop();
-                _refresh();
+              onPressed: () async {
+                final scrim = Scrim(
+                  id: DateTime.now().millisecondsSinceEpoch.toString(),
+                  date: selectedDate,
+                  map: selectedMap,
+                  ourComp: ourComp.whereType<Agent>().toList(),
+                  theirComp: theirComp.whereType<Agent>().toList(),
+                  result: result,
+                  roundsWonAttack: ourRoundsWon,
+                  roundsPlayedAttack: ourRoundsPlayedAttack,
+                  roundsWonDefense: theirRoundsWon,
+                  roundsPlayedDefense: ourRoundsPlayedDefense,
+                  atkPistolWin: ourAtkPistolWin,
+                  defPistolWin: ourDefPistolWin,
+                  teamId: teamName.isNotEmpty ? teamName : 'Unknown',
+                  startingSide: startingSide,
+                  enemyTier: enemyTier,
+                );
+                
+                try {
+                  await _repo.insertScrim(scrim);
+                  if (c.mounted) {
+                    Navigator.of(c).pop();
+                    _refresh();
+                  }
+                } catch (e) {
+                  if (c.mounted) {
+                    ScaffoldMessenger.of(c).showSnackBar(
+                      SnackBar(content: Text('Error saving scrim: $e')),
+                    );
+                  }
+                }
               },
               child: const Text('Add'),
             ),
@@ -507,19 +603,49 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
 
   @override
   Widget build(BuildContext context) {
+    final hasSelection = _selectedScrimIds.isNotEmpty;
     return Scaffold(
-      appBar: AppBar(title: const Text('Scrims')),
+      appBar: AppBar(
+        title: Text(hasSelection ? '${_selectedScrimIds.length} selected' : 'Scrims inbox'),
+        actions: [],
+      ),
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 140.0, top: 16.0, bottom: 8.0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: ElevatedButton.icon(
-                onPressed: _showAddDialog,
-                icon: const Icon(Icons.add),
-                label: const Text('Add Scrim'),
-              ),
+            padding: const EdgeInsets.fromLTRB(140.0, 12.0, 140.0, 8.0),
+            child: Row(
+              children: [
+                ElevatedButton.icon(
+                  onPressed: _showAddDialog,
+                  icon: const Icon(Icons.add),
+                  label: const Text('Add Scrim'),
+                ),
+                const SizedBox(width: 8),
+                IconButton(
+                  tooltip: _allScrimsSelected ? 'Clear selection' : 'Select all',
+                  icon: Icon(_allScrimsSelected ? Icons.check_box : Icons.select_all),
+                  onPressed: _allScrimsSelected ? _clearSelection : _selectAllScrims,
+                ),
+                const SizedBox(width: 8),
+                if (hasSelection) ...[
+                  IconButton(
+                    tooltip: 'Delete selected',
+                    icon: const Icon(Icons.delete_outline),
+                    onPressed: _deleteSelectedScrims,
+                  ),
+                  const SizedBox(width: 4),
+                ],
+                Text(
+                  hasSelection ? '${_selectedScrimIds.length} selected' : '${scrims.length} scrims',
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white70),
+                ),
+                const Spacer(),
+                TextButton.icon(
+                  onPressed: hasSelection ? _clearSelection : null,
+                  icon: const Icon(Icons.clear),
+                  label: const Text('Clear selection'),
+                ),
+              ],
             ),
           ),
           Expanded(
@@ -530,193 +656,252 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
                 child: ListView.builder(
                   itemCount: scrims.length,
                   itemBuilder: (context, i) {
-              final s = scrims[i];
-              final totalRoundsWon = s.roundsWonAttack + s.roundsWonDefense;
-              final totalRoundsPlayed = s.roundsPlayedAttack + s.roundsPlayedDefense;
-              final opponentRoundsWon = (totalRoundsPlayed - totalRoundsWon).clamp(0, totalRoundsPlayed);
-              final mapShort = s.map.toString().split('.').last;
-              final mapImageUrl = s.map.imageUrl;
-              final resultColor = s.result == 'win' ? Colors.green : (s.result == 'loss' ? Colors.red : Colors.grey);
+                    final s = scrims[i];
+                    final isSelected = _selectedScrimIds.contains(s.id);
+                    final totalRoundsWon = s.roundsWonAttack + s.roundsWonDefense;
+                    final totalRoundsPlayed = s.roundsPlayedAttack + s.roundsPlayedDefense;
+                    final opponentRoundsWon = (totalRoundsPlayed - totalRoundsWon).clamp(0, totalRoundsPlayed);
+                    final mapShort = s.map.toString().split('.').last;
+                    final mapImageUrl = s.map.imageUrl;
+                    final resultColor = s.result == 'win' ? Colors.green : (s.result == 'loss' ? Colors.red : Colors.grey);
 
-              Color roundsColor(int ourRounds, int theirRounds) {
-                if (ourRounds > theirRounds) return Colors.green;
-                if (ourRounds < theirRounds) return Colors.red;
-                return Colors.amber;
-              }
+                    Color roundsColor(int ourRounds, int theirRounds) {
+                      if (ourRounds > theirRounds) return Colors.green;
+                      if (ourRounds < theirRounds) return Colors.red;
+                      return Colors.amber;
+                    }
 
-              final ourRoundsColor = roundsColor(totalRoundsWon, opponentRoundsWon);
-              final theirRoundsColor = roundsColor(opponentRoundsWon, totalRoundsWon);
+                    final ourRoundsColor = roundsColor(totalRoundsWon, opponentRoundsWon);
+                    final theirRoundsColor = roundsColor(opponentRoundsWon, totalRoundsWon);
 
-              return Card(
-                margin: const EdgeInsets.symmetric(vertical: 4),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                elevation: 2,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(12),
-                  onTap: () {},
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Stack(
-                      children: [
-                        Positioned.fill(
-                          child: mapImageUrl == null
-                              ? Container(color: Colors.blueGrey.shade100)
-                              : Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: FractionallySizedBox(
-                                    widthFactor: 0.48,
-                                    alignment: Alignment.centerLeft,
-                                    child: Transform.scale(
-                                      scale: 1.12,
-                                      alignment: Alignment.centerLeft,
-                                      child: ShaderMask(
-                                        shaderCallback: (rect) => const LinearGradient(
-                                          begin: Alignment.centerLeft,
-                                          end: Alignment.centerRight,
-                                          colors: [Colors.white, Colors.white, Colors.white70, Colors.transparent],
-                                          stops: [0.0, 0.35, 0.6, 0.95],
-                                        ).createShader(rect),
-                                        blendMode: BlendMode.dstIn,
-                                        child: Image.network(
-                                          mapImageUrl,
-                                          fit: BoxFit.cover,
+                    return Card(
+                      margin: const EdgeInsets.symmetric(vertical: 4),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        side: BorderSide(
+                          color: isSelected ? Colors.tealAccent.withOpacity(0.85) : Colors.white10,
+                          width: isSelected ? 1.4 : 1.0,
+                        ),
+                      ),
+                      color: isSelected ? Colors.teal.withOpacity(0.16) : null,
+                      surfaceTintColor: isSelected ? Colors.teal : null,
+                      elevation: 2,
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(12),
+                        onTap: () {
+                          if (hasSelection) {
+                            _toggleScrimSelection(s.id);
+                            return;
+                          }
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => ScrimDetailPage(scrim: s),
+                            ),
+                          );
+                        },
+                        onLongPress: () => _toggleScrimSelection(s.id),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Stack(
+                            children: [
+                              Positioned.fill(
+                                child: mapImageUrl == null
+                                    ? Container(color: Colors.blueGrey.shade100)
+                                    : Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: FractionallySizedBox(
+                                          widthFactor: 0.48,
                                           alignment: Alignment.centerLeft,
-                                          errorBuilder: (context, error, stackTrace) => Container(color: Colors.blueGrey.shade100),
+                                          child: Transform.scale(
+                                            scale: 1.12,
+                                            alignment: Alignment.centerLeft,
+                                            child: ShaderMask(
+                                              shaderCallback: (rect) => const LinearGradient(
+                                                begin: Alignment.centerLeft,
+                                                end: Alignment.centerRight,
+                                                colors: [Colors.white, Colors.white, Colors.white70, Colors.transparent],
+                                                stops: [0.0, 0.35, 0.6, 0.95],
+                                              ).createShader(rect),
+                                              blendMode: BlendMode.dstIn,
+                                              child: Image.network(
+                                                mapImageUrl,
+                                                fit: BoxFit.cover,
+                                                alignment: Alignment.centerLeft,
+                                                errorBuilder: (context, error, stackTrace) => Container(color: Colors.blueGrey.shade100),
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                       ),
+                              ),
+                              Positioned.fill(
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
+                                      colors: [
+                                        Colors.transparent,
+                                        Colors.black.withOpacity(0.06),
+                                        Colors.black.withOpacity(0.24),
+                                        Colors.black.withOpacity(0.84),
+                                      ],
+                                      stops: const [0.0, 0.5, 0.78, 1.0],
                                     ),
                                   ),
                                 ),
-                        ),
-
-                        Positioned.fill(
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [
-                                  Colors.transparent,
-                                  Colors.black.withOpacity(0.06),
-                                  Colors.black.withOpacity(0.24),
-                                  Colors.black.withOpacity(0.84),
-                                ],
-                                stops: const [0.0, 0.5, 0.78, 1.0],
                               ),
-                            ),
-                          ),
-                        ),
-
-                        Positioned.fill(
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [
-                                  Colors.black.withOpacity(0.28),
-                                  Colors.black.withOpacity(0.08),
-                                  Colors.transparent,
-                                ],
-                                stops: const [0.0, 0.25, 0.6],
-                              ),
-                            ),
-                          ),
-                        ),
-
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-                          child: DefaultTextStyle.merge(
-                            style: const TextStyle(color: Colors.white),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Expanded(child: Text('${s.date.toLocal().toIso8601String().split('T').first} • $mapShort', style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13))),
-                                    const SizedBox(width: 8),
-                                    Chip(
-                                      label: Text(s.result.toUpperCase(), style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                                      backgroundColor: resultColor,
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 6),
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      flex: 4,
-                                      child: _CompPanel(
-                                        title: 'Our comp',
-                                        agents: s.ourComp,
-                                        accentColor: Colors.green.shade300,
-                                      ),
-                                    ),
-                                    const SizedBox(width: 6),
-                                    Expanded(
-                                      flex: 2,
-                                      child: _RoundsPanel(
-                                        label: 'Our rounds',
-                                        value: totalRoundsWon,
-                                        color: ourRoundsColor,
-                                      ),
-                                    ),
-                                    const SizedBox(width: 6),
-                                    Column(
-                                      children: [
-                                        Text('Vs.', style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w700, color: Colors.white)),
-                                        const SizedBox(height: 2),
-                                        Text(
-                                          s.result.toUpperCase(),
-                                          style: TextStyle(fontWeight: FontWeight.bold, color: resultColor),
-                                        ),
+                              Positioned.fill(
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
+                                      colors: [
+                                        Colors.black.withOpacity(0.28),
+                                        Colors.black.withOpacity(0.08),
+                                        Colors.transparent,
                                       ],
+                                      stops: const [0.0, 0.25, 0.6],
                                     ),
-                                    const SizedBox(width: 6),
-                                    Expanded(
-                                      flex: 2,
-                                      child: _RoundsPanel(
-                                        label: 'Their rounds',
-                                        value: opponentRoundsWon,
-                                        color: theirRoundsColor,
-                                        alignEnd: true,
-                                      ),
-                                    ),
-                                    const SizedBox(width: 6),
-                                    Expanded(
-                                      flex: 4,
-                                      child: _CompPanel(
-                                        title: 'Their comp',
-                                        agents: s.theirComp,
-                                        accentColor: Colors.red.shade300,
-                                        alignEnd: true,
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                                const SizedBox(height: 6),
-                                Row(
-                                  children: [
-                                    Expanded(child: Text('Team: ${s.teamId}', style: const TextStyle(fontSize: 11))),
-                                    Text('Played: $totalRoundsPlayed', style: const TextStyle(fontSize: 12)),
-                                    const SizedBox(width: 12),
-                                    Text('P DEF:${s.defPistolWin ? 'Y' : 'N'}', style: const TextStyle(fontSize: 12)),
-                                    const SizedBox(width: 6),
-                                    Text('P ATK:${s.atkPistolWin ? 'Y' : 'N'}', style: const TextStyle(fontSize: 12)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                child: DefaultTextStyle.merge(
+                                  style: const TextStyle(color: Colors.white),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Transform.translate(
+                                            offset: const Offset(-6, -2),
+                                            child: Checkbox(
+                                              value: isSelected,
+                                              onChanged: (_) => _toggleScrimSelection(s.id),
+                                              activeColor: Colors.tealAccent.shade700,
+                                              checkColor: Colors.black,
+                                              side: BorderSide(color: Colors.white.withOpacity(0.85)),
+                                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                            ),
+                                          ),
+                                          const SizedBox(width: 2),
+                                          Expanded(
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Expanded(
+                                                      child: Text(
+                                                        '${s.date.toLocal().toIso8601String().split('T').first} • $mapShort',
+                                                        style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
+                                                      ),
+                                                    ),
+                                                    const SizedBox(width: 8),
+                                                    Chip(
+                                                      label: Text(
+                                                        s.result.toUpperCase(),
+                                                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                                                      ),
+                                                      backgroundColor: resultColor,
+                                                    ),
+                                                  ],
+                                                ),
+                                                const SizedBox(height: 2),
+                                                Text(
+                                                  'Team: ${s.teamId}  •  Played: $totalRoundsPlayed  •  ${s.startingSide.toUpperCase()} start',
+                                                  style: const TextStyle(fontSize: 11, color: Colors.white70),
+                                                  maxLines: 1,
+                                                  overflow: TextOverflow.ellipsis,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 6),
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            flex: 4,
+                                            child: _CompPanel(
+                                              title: 'Our comp',
+                                              agents: s.ourComp,
+                                              accentColor: Colors.green.shade300,
+                                            ),
+                                          ),
+                                          const SizedBox(width: 6),
+                                          Expanded(
+                                            flex: 2,
+                                            child: _RoundsPanel(
+                                              label: 'Rounds won',
+                                              value: totalRoundsWon,
+                                              color: ourRoundsColor,
+                                            ),
+                                          ),
+                                          const SizedBox(width: 6),
+                                          Column(
+                                            children: [
+                                              Text(
+                                                'vs.',
+                                                style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w700, color: Colors.white),
+                                              ),
+                                              const SizedBox(height: 2),
+                                              Text(
+                                                s.result.toUpperCase(),
+                                                style: TextStyle(fontWeight: FontWeight.bold, color: resultColor),
+                                              ),
                                             ],
+                                          ),
+                                          const SizedBox(width: 6),
+                                          Expanded(
+                                            flex: 2,
+                                            child: _RoundsPanel(
+                                              label: 'Rounds lost',
+                                              value: opponentRoundsWon,
+                                              color: theirRoundsColor,
+                                              alignEnd: true,
+                                            ),
+                                          ),
+                                          const SizedBox(width: 6),
+                                          Expanded(
+                                            flex: 4,
+                                            child: _CompPanel(
+                                              title: 'Their comp',
+                                              agents: s.theirComp,
+                                              accentColor: Colors.red.shade300,
+                                              alignEnd: true,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 6),
+                                      Row(
+                                        children: [
+                                          Expanded(child: Text('Map: $mapShort', style: const TextStyle(fontSize: 11))),
+                                          Text('Played: $totalRoundsPlayed', style: const TextStyle(fontSize: 12)),
+                                          const SizedBox(width: 12),
+                                          Text('P DEF:${s.defPistolWin ? 'Y' : 'N'}', style: const TextStyle(fontSize: 12)),
+                                          const SizedBox(width: 6),
+                                          Text('P ATK:${s.atkPistolWin ? 'Y' : 'N'}', style: const TextStyle(fontSize: 12)),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
-                  ),
+                      ),
+                    );
+                  },
                 ),
-              );
-            },
-          ),
-        ),
+              ),
             ),
           ),
         ],

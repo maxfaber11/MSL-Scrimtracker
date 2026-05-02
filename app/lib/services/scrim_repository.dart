@@ -39,10 +39,31 @@ class ScrimRepository {
       // ignore: avoid_print
       print('Inserted scrim row id: $id');
     } catch (e, st) {
+      // If error is about missing columns, try without the new columns
+      if (e.toString().contains('startingSide') || e.toString().contains('enemyTier')) {
+        // ignore: avoid_print
+        print('Retrying insert without startingSide/enemyTier columns...');
+        map.remove('startingSide');
+        map.remove('enemyTier');
+        try {
+          final id = await db.insert('scrims', map, conflictAlgorithm: ConflictAlgorithm.replace);
+          // ignore: avoid_print
+          print('Inserted scrim row id (without new columns): $id');
+          return;
+        } catch (retryError) {
+          // ignore: avoid_print
+          print('Retry failed: $retryError');
+        }
+      }
       // ignore: avoid_print
       print('Error inserting scrim: $e\n$st');
       rethrow;
     }
+  }
+
+  Future<void> deleteScrim(String id) async {
+    final db = await _dbProvider.database;
+    await db.delete('scrims', where: 'id = ?', whereArgs: [id]);
   }
 
   Future<List<Scrim>> getAllScrims() async {

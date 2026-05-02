@@ -65,10 +65,16 @@ class _RootPageState extends State<RootPage> {
   int _index = 0;
   final ScrimRepository _repo = ScrimRepository();
 
-  final _pages = <Widget>[
-    ScrimOverviewPage(),
-    StatsPage(),
-  ];
+  Widget _pageForIndex(int index) {
+    switch (index) {
+      case 0:
+        return const ScrimOverviewPage();
+      case 1:
+        return const StatsPage();
+      default:
+        return const ScrimOverviewPage();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +89,7 @@ class _RootPageState extends State<RootPage> {
               NavigationRailDestination(icon: Icon(Icons.bar_chart), label: Text('Stats')),
             ],
           ),
-          Expanded(child: _pages[_index]),
+          Expanded(child: _pageForIndex(_index)),
         ],
       ),
     );
