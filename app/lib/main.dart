@@ -41,11 +41,11 @@ class MyApp extends StatelessWidget {
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           ),
         ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        navigationRailTheme: NavigationRailThemeData(
           backgroundColor: const Color(0xFF071020),
-          selectedItemColor: Colors.teal.shade300,
-          unselectedItemColor: Colors.grey.shade400,
-          showUnselectedLabels: true,
+          selectedIconTheme: IconThemeData(color: Colors.teal.shade300),
+          unselectedIconTheme: IconThemeData(color: Colors.grey.shade400),
+          labelType: NavigationRailLabelType.all,
         ),
         textTheme: ThemeData.dark().textTheme.apply(bodyColor: Colors.white, displayColor: Colors.white),
       ),
@@ -73,14 +73,18 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_index],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _index,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Scrims'),
-          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: 'Stats'),
+      body: Row(
+        children: [
+          NavigationRail(
+            selectedIndex: _index,
+            onDestinationSelected: (i) => setState(() => _index = i),
+            destinations: const [
+              NavigationRailDestination(icon: Icon(Icons.list), label: Text('Scrims')),
+              NavigationRailDestination(icon: Icon(Icons.bar_chart), label: Text('Stats')),
+            ],
+          ),
+          Expanded(child: _pages[_index]),
         ],
-        onTap: (i) => setState(() => _index = i),
       ),
     );
   }

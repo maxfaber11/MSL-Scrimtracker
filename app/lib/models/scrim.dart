@@ -16,6 +16,8 @@ class Scrim {
   final bool defPistolWin;
   final bool atkPistolWin;
   final String teamId; // reference to Team
+  final String startingSide; // 'attack' or 'defense'
+  final String enemyTier; // 'T1', 'T2', 'T3', 'GC T1', 'GC T2'
 
   Scrim({
     required this.id,
@@ -31,6 +33,8 @@ class Scrim {
     required this.defPistolWin,
     required this.atkPistolWin,
     required this.teamId,
+    required this.startingSide,
+    required this.enemyTier,
   });
 
   static List<Agent> _parseAgentList(dynamic raw) {
@@ -81,6 +85,8 @@ class Scrim {
       defPistolWin: ((json['defPistolWin'] == 1) || (json['defPistolWin'] == true)) ,
       atkPistolWin: ((json['atkPistolWin'] == 1) || (json['atkPistolWin'] == true)) ,
       teamId: json['teamId'] as String,
+      startingSide: (json['startingSide'] ?? 'attack') as String,
+      enemyTier: (json['enemyTier'] ?? 'T1') as String,
     );
   }
 
@@ -89,7 +95,7 @@ class Scrim {
         'date': date.toIso8601String(),
         'map': map.toString().split('.').last,
         'ourComp': ourComp.map((a) => a.displayName).toList(),
-          'theirComp': theirComp.map((a) => a.displayName).toList(),
+        'theirComp': theirComp.map((a) => a.displayName).toList(),
         'result': result,
         'roundsWonDefense': roundsWonDefense,
         'roundsPlayedDefense': roundsPlayedDefense,
@@ -98,5 +104,7 @@ class Scrim {
         'defPistolWin': defPistolWin,
         'atkPistolWin': atkPistolWin,
         'teamId': teamId,
+        'startingSide': startingSide,
+        'enemyTier': enemyTier,
       };
 }

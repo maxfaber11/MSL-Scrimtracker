@@ -29,13 +29,478 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
     setState(() => scrims = list);
   }
 
-  void _showAddDialog() {
+  void _showAgentSelector(BuildContext context, Function(Agent?) onSelect) {
     showDialog(
       context: context,
       builder: (c) => AlertDialog(
-        title: const Text('Add scrim'),
-        content: const Text('Add dialog not implemented yet.'),
-        actions: [TextButton(onPressed: () => Navigator.of(c).pop(), child: const Text('OK'))],
+        backgroundColor: const Color(0xFF0B1722),
+        title: const Text('Select Agent', style: TextStyle(color: Colors.white)),
+        content: SizedBox(
+          width: 300,
+          height: 300,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ListTile(
+                  title: const Text('None', style: TextStyle(color: Colors.white)),
+                  onTap: () {
+                    onSelect(null);
+                    Navigator.of(c).pop();
+                  },
+                ),
+                ...Agent.values.map((agent) {
+                  return ListTile(
+                    leading: CircleAvatar(
+                      radius: 18,
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: agent.imageUrl == null ? null : NetworkImage(agent.imageUrl!),
+                      child: agent.imageUrl == null
+                          ? Text(agent.displayName.substring(0, 1), style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold))
+                          : null,
+                    ),
+                    title: Text(agent.displayName, style: const TextStyle(color: Colors.white)),
+                    onTap: () {
+                      onSelect(agent);
+                      Navigator.of(c).pop();
+                    },
+                  );
+                }).toList(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _showAddDialog() {
+    DateTime selectedDate = DateTime.now();
+    GameMap selectedMap = GameMap.Ascent;
+    String teamName = '';
+    String enemyTier = 'T1';
+    List<Agent?> ourComp = List.filled(5, null);
+    List<Agent?> theirComp = List.filled(5, null);
+    int ourRoundsWon = 0;
+    int theirRoundsWon = 0;
+    int ourRoundsPlayedAttack = 12;
+    int ourRoundsPlayedDefense = 12;
+    bool ourAtkPistolWin = false;
+    bool ourDefPistolWin = false;
+    String result = 'draw';
+    String startingSide = 'attack';
+
+    final tierColors = <String, Color>{
+      'T1': const Color(0xFFE74C3C),
+      'T2': const Color(0xFFE67E22),
+      'T3': const Color(0xFF3498DB),
+      'GC T1': const Color(0xFF2ECC71),
+      'GC T2': const Color(0xFF9B59B6),
+    };
+
+    showDialog(
+      context: context,
+      builder: (c) => StatefulBuilder(
+        builder: (context, setState) => AlertDialog(
+          backgroundColor: const Color(0xFF0B1722),
+          title: const Text('Add Scrim', style: TextStyle(color: Colors.white)),
+          content: SingleChildScrollView(
+            child: SizedBox(
+              width: 600,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Date picker
+                  Text('Date', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white)),
+                  const SizedBox(height: 8),
+                  InkWell(
+                    onTap: () async {
+                      final picked = await showDatePicker(
+                        context: context,
+                        initialDate: selectedDate,
+                        firstDate: DateTime(2020),
+                        lastDate: DateTime.now(),
+                      );
+                      if (picked != null) setState(() => selectedDate = picked);
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.teal.shade300),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        selectedDate.toLocal().toIso8601String().split('T').first,
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Map selector
+                  Text('Map', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white)),
+                  const SizedBox(height: 8),
+                  DropdownButtonFormField<GameMap>(
+                    value: selectedMap,
+                    dropdownColor: const Color(0xFF0B1722),
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade300)),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    ),
+                    items: GameMap.values
+                        .map((map) => DropdownMenuItem(
+                              value: map,
+                              child: Text(
+                                map.toString().split('.').last,
+                                style: const TextStyle(color: Colors.white),
+                              ),
+                            ))
+                        .toList(),
+                    onChanged: (value) => setState(() => selectedMap = value!),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Enemy Team + Tier
+                  Text('Enemy Team', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white)),
+                  const SizedBox(height: 8),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          onChanged: (value) => teamName = value,
+                          style: const TextStyle(color: Colors.white),
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade300)),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                            hintText: 'Team name',
+                            hintStyle: TextStyle(color: Colors.grey.shade400),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      SizedBox(
+                        width: 150,
+                        child: DropdownButtonFormField<String>(
+                          value: enemyTier,
+                          dropdownColor: const Color(0xFF0B1722),
+                          borderRadius: BorderRadius.circular(28),
+                          iconEnabledColor: Colors.white,
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: tierColors[enemyTier]!.withOpacity(0.22),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(999),
+                              borderSide: BorderSide(color: tierColors[enemyTier]!),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(999),
+                              borderSide: BorderSide(color: tierColors[enemyTier]!, width: 1.4),
+                            ),
+                          ),
+                          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+                          items: tierColors.entries
+                              .map(
+                                (entry) => DropdownMenuItem(
+                                  value: entry.key,
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        width: 10,
+                                        height: 10,
+                                        decoration: BoxDecoration(
+                                          color: entry.value,
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text(
+                                        entry.key,
+                                        style: TextStyle(color: entry.value, fontWeight: FontWeight.w700),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              )
+                              .toList(),
+                          onChanged: (value) {
+                            if (value == null) return;
+                            setState(() => enemyTier = value);
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Result selector
+                  Text('Result', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white)),
+                  const SizedBox(height: 8),
+                  DropdownButtonFormField<String>(
+                    value: result,
+                    dropdownColor: const Color(0xFF0B1722),
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade300)),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    ),
+                    items: ['win', 'loss', 'draw']
+                        .map((r) => DropdownMenuItem(
+                              value: r,
+                              child: Text(
+                                r.toUpperCase(),
+                                style: const TextStyle(color: Colors.white),
+                              ),
+                            ))
+                        .toList(),
+                    onChanged: (value) => setState(() => result = value!),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Attack Rounds
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text('Attack', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Won', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white, fontSize: 12)),
+                            const SizedBox(height: 8),
+                            TextField(
+                              keyboardType: TextInputType.number,
+                              onChanged: (value) => ourRoundsWon = int.tryParse(value) ?? 0,
+                              style: const TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade300)),
+                                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Played', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white, fontSize: 12)),
+                            const SizedBox(height: 8),
+                            TextField(
+                              keyboardType: TextInputType.number,
+                              onChanged: (value) => ourRoundsPlayedAttack = int.tryParse(value) ?? 12,
+                              style: const TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade300)),
+                                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                hintText: '12',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Defense Rounds
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text('Defense', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Won', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white, fontSize: 12)),
+                            const SizedBox(height: 8),
+                            TextField(
+                              keyboardType: TextInputType.number,
+                              onChanged: (value) => theirRoundsWon = int.tryParse(value) ?? 0,
+                              style: const TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade300)),
+                                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Played', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white, fontSize: 12)),
+                            const SizedBox(height: 8),
+                            TextField(
+                              keyboardType: TextInputType.number,
+                              onChanged: (value) => ourRoundsPlayedDefense = int.tryParse(value) ?? 12,
+                              style: const TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade300)),
+                                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                hintText: '12',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Starting side
+                  Text('Starting Side', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white)),
+                  const SizedBox(height: 8),
+                  DropdownButtonFormField<String>(
+                    value: startingSide,
+                    dropdownColor: const Color(0xFF0B1722),
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade300)),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    ),
+                    items: ['attack', 'defense']
+                        .map((side) => DropdownMenuItem(
+                              value: side,
+                              child: Text(
+                                side.toUpperCase(),
+                                style: const TextStyle(color: Colors.white),
+                              ),
+                            ))
+                        .toList(),
+                    onChanged: (value) => setState(() => startingSide = value!),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Pistol Wins
+                  Row(
+                    children: [
+                      Expanded(
+                        child: CheckboxListTile(
+                          title: const Text('ATK Pistol Win', style: TextStyle(color: Colors.white, fontSize: 12)),
+                          value: ourAtkPistolWin,
+                          onChanged: (value) => setState(() => ourAtkPistolWin = value ?? false),
+                          contentPadding: EdgeInsets.zero,
+                          controlAffinity: ListTileControlAffinity.leading,
+                        ),
+                      ),
+                      Expanded(
+                        child: CheckboxListTile(
+                          title: const Text('DEF Pistol Win', style: TextStyle(color: Colors.white, fontSize: 12)),
+                          value: ourDefPistolWin,
+                          onChanged: (value) => setState(() => ourDefPistolWin = value ?? false),
+                          contentPadding: EdgeInsets.zero,
+                          controlAffinity: ListTileControlAffinity.leading,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Our Comp selector
+                  Text('Our Comp', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white)),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: List.generate(5, (index) {
+                      return Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 4),
+                          child: GestureDetector(
+                            onTap: () => _showAgentSelector(context, (agent) => setState(() => ourComp[index] = agent)),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.teal.shade300),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              padding: const EdgeInsets.all(4),
+                              child: Center(
+                                child: ourComp[index] == null
+                                    ? Icon(Icons.add, color: Colors.grey.shade400, size: 24)
+                                    : CircleAvatar(
+                                        radius: 16,
+                                        backgroundColor: Colors.transparent,
+                                        backgroundImage: ourComp[index]!.imageUrl == null ? null : NetworkImage(ourComp[index]!.imageUrl!),
+                                        child: ourComp[index]!.imageUrl == null
+                                            ? Text(ourComp[index]!.displayName.substring(0, 1), style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12))
+                                            : null,
+                                      ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Their Comp selector
+                  Text('Their Comp', style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white)),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: List.generate(5, (index) {
+                      return Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 4),
+                          child: GestureDetector(
+                            onTap: () => _showAgentSelector(context, (agent) => setState(() => theirComp[index] = agent)),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.teal.shade300),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              padding: const EdgeInsets.all(4),
+                              child: Center(
+                                child: theirComp[index] == null
+                                    ? Icon(Icons.add, color: Colors.grey.shade400, size: 24)
+                                    : CircleAvatar(
+                                        radius: 16,
+                                        backgroundColor: Colors.transparent,
+                                        backgroundImage: theirComp[index]!.imageUrl == null ? null : NetworkImage(theirComp[index]!.imageUrl!),
+                                        child: theirComp[index]!.imageUrl == null
+                                            ? Text(theirComp[index]!.displayName.substring(0, 1), style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12))
+                                            : null,
+                                      ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(c).pop(),
+              child: const Text('Cancel', style: TextStyle(color: Colors.white)),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // TODO: Save scrim to database
+                Navigator.of(c).pop();
+                _refresh();
+              },
+              child: const Text('Add'),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -44,13 +509,27 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Scrims')),
-      body: RefreshIndicator(
-        onRefresh: _refresh,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 6.0),
-          child: ListView.builder(
-            itemCount: scrims.length,
-            itemBuilder: (context, i) {
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 140.0, top: 16.0, bottom: 8.0),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: ElevatedButton.icon(
+                onPressed: _showAddDialog,
+                icon: const Icon(Icons.add),
+                label: const Text('Add Scrim'),
+              ),
+            ),
+          ),
+          Expanded(
+            child: RefreshIndicator(
+              onRefresh: _refresh,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 140.0, vertical: 6.0),
+                child: ListView.builder(
+                  itemCount: scrims.length,
+                  itemBuilder: (context, i) {
               final s = scrims[i];
               final totalRoundsWon = s.roundsWonAttack + s.roundsWonDefense;
               final totalRoundsPlayed = s.roundsPlayedAttack + s.roundsPlayedDefense;
@@ -69,7 +548,7 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
               final theirRoundsColor = roundsColor(opponentRoundsWon, totalRoundsWon);
 
               return Card(
-                margin: const EdgeInsets.symmetric(vertical: 6),
+                margin: const EdgeInsets.symmetric(vertical: 4),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 elevation: 2,
                 child: InkWell(
@@ -146,7 +625,7 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
                         ),
 
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                           child: DefaultTextStyle.merge(
                             style: const TextStyle(color: Colors.white),
                             child: Column(
@@ -154,7 +633,7 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
                               children: [
                                 Row(
                                   children: [
-                                    Expanded(child: Text('${s.date.toLocal().toIso8601String().split('T').first} • $mapShort', style: const TextStyle(fontWeight: FontWeight.w600))),
+                                    Expanded(child: Text('${s.date.toLocal().toIso8601String().split('T').first} • $mapShort', style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13))),
                                     const SizedBox(width: 8),
                                     Chip(
                                       label: Text(s.result.toUpperCase(), style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
@@ -162,7 +641,7 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 10),
+                                const SizedBox(height: 6),
                                 Row(
                                   children: [
                                     Expanded(
@@ -173,7 +652,7 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
                                         accentColor: Colors.green.shade300,
                                       ),
                                     ),
-                                    const SizedBox(width: 10),
+                                    const SizedBox(width: 6),
                                     Expanded(
                                       flex: 2,
                                       child: _RoundsPanel(
@@ -182,18 +661,18 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
                                         color: ourRoundsColor,
                                       ),
                                     ),
-                                    const SizedBox(width: 10),
+                                    const SizedBox(width: 6),
                                     Column(
                                       children: [
-                                        Text('Vs.', style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700, color: Colors.white)),
-                                        const SizedBox(height: 4),
+                                        Text('Vs.', style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w700, color: Colors.white)),
+                                        const SizedBox(height: 2),
                                         Text(
                                           s.result.toUpperCase(),
                                           style: TextStyle(fontWeight: FontWeight.bold, color: resultColor),
                                         ),
                                       ],
                                     ),
-                                    const SizedBox(width: 10),
+                                    const SizedBox(width: 6),
                                     Expanded(
                                       flex: 2,
                                       child: _RoundsPanel(
@@ -203,7 +682,7 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
                                         alignEnd: true,
                                       ),
                                     ),
-                                    const SizedBox(width: 10),
+                                    const SizedBox(width: 6),
                                     Expanded(
                                       flex: 4,
                                       child: _CompPanel(
@@ -215,10 +694,10 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 12),
+                                const SizedBox(height: 6),
                                 Row(
                                   children: [
-                                    Expanded(child: Text('Team: ${s.teamId}', style: const TextStyle(fontSize: 12))),
+                                    Expanded(child: Text('Team: ${s.teamId}', style: const TextStyle(fontSize: 11))),
                                     Text('Played: $totalRoundsPlayed', style: const TextStyle(fontSize: 12)),
                                     const SizedBox(width: 12),
                                     Text('P DEF:${s.defPistolWin ? 'Y' : 'N'}', style: const TextStyle(fontSize: 12)),
@@ -238,6 +717,9 @@ class _ScrimOverviewPageState extends State<ScrimOverviewPage> {
             },
           ),
         ),
+            ),
+          ),
+        ],
       ),
     );
   }
